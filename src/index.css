@@ -16,3 +16,10 @@ code {
 .app {
   text-align: center;
 }
+
+.card_wrapper {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+}

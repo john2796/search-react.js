@@ -99,7 +99,6 @@ function NavBar(props) {
 
             <InputBase
               onChange={props.handleChange}
-              value={props.val}
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
