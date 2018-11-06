@@ -4,7 +4,7 @@ import Cards from "./components/Cards";
 
 class App extends Component {
   state = {
-    loading: true,
+    loading: false,
     error: null,
     items: [],
     searchTerm: ""
@@ -19,7 +19,11 @@ class App extends Component {
     )
       .then(res => res.json())
       .then(data => {
-        this.setState({ items: data.items });
+        this.setState({ items: data.items, loading: true });
+        // console.log(data.items);
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
 
@@ -27,19 +31,22 @@ class App extends Component {
     this.setState({ searchTerm: e.target.value });
   };
   render() {
-    const { searchTerm, items } = this.state;
+    const { searchTerm, items, loading } = this.state;
     // item.pagemap.cse_image[0].src
+    console.log(items);
 
     return (
       <div className="app">
         <NavBar
           handleChange={this.handleChange}
           getResults={this.getResults}
-          value={searchTerm}
+          val={searchTerm}
         />
-        {items.map(item => (
-          <Cards item={item} key={item.cacheId} />
-        ))}
+        {!loading ? (
+          items.map(item => <Cards item={item} key={item.cacheId} />)
+        ) : (
+          <p>loading . . .</p>
+        )}
       </div>
     );
   }

@@ -20,23 +20,17 @@ const styles = {
 
 const Cards = props => {
   const { classes, item } = props;
-  //item.pagemap.cse_image[0].src
+  console.log(item);
+  // const img = item.pagemap.cse_image.map(img => console.log(img));
   return (
     <Card className={classes.card}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
-          title="Contemplative Reptile"
-        />
+        <CardMedia className={classes.media} image="#" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {item.title}
           </Typography>
-          <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
+          <Typography component="p">{item.snippet}</Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
@@ -44,7 +38,9 @@ const Cards = props => {
           Share
         </Button>
         <Button size="small" color="primary">
-          Learn More
+          <a href={item.link} target="_blank" without rel="noopener noreferrer">
+            Learn More
+          </a>
         </Button>
       </CardActions>
     </Card>
