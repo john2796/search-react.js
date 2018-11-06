@@ -8,6 +8,7 @@ import InputBase from "@material-ui/core/InputBase";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import { withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
+import Button from "@material-ui/core/Button";
 
 const styles = theme => ({
   root: {
@@ -66,6 +67,10 @@ const styles = theme => ({
         width: 200
       }
     }
+  },
+  AppBar: {
+    background:
+      "linear-gradient(to right, #BE5869, #403A3E)" /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 });
 
@@ -73,7 +78,7 @@ function NavBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.AppBar}>
         <Toolbar>
           <IconButton
             className={classes.menuButton}
@@ -97,6 +102,7 @@ function NavBar(props) {
               <SearchIcon />
             </div>
 
+            {/* <form onSubmit={props.getResults}> */}
             <InputBase
               onChange={props.handleChange}
               placeholder="Search…"
@@ -105,8 +111,16 @@ function NavBar(props) {
                 input: classes.inputInput
               }}
             />
-            <button onClick={props.getResults}>Submit</button>
+            {/* </form> */}
           </div>
+          <Button
+            variant="contained"
+            href="#contained-buttons"
+            className={classes.button}
+            onClick={props.getResults}
+          >
+            Submit
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
