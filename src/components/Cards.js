@@ -26,7 +26,7 @@ const Cards = props => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
+          image={item.pagemap["cse_image"][0].src}
           title="Contemplative Reptile"
         />
         <CardContent>
