@@ -19,18 +19,19 @@ const styles = {
 };
 
 const Cards = props => {
-  const { classes } = props;
+  const { classes, item } = props;
+  //item.pagemap.cse_image[0].src
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {item.title}
           </Typography>
           <Typography component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000
