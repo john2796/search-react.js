@@ -20,13 +20,14 @@ const styles = {
 
 const Cards = props => {
   const { classes, item } = props;
-  //item.pagemap.cse_image[0].src
+  console.log(item);
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
           image={item.pagemap["cse_image"][0].src}
+          style={{ objectFit: "cover" }}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
