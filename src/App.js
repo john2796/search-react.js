@@ -16,13 +16,13 @@ class App extends Component {
     e.preventDefault();
 
     if (!searchTerm) {
-      console.log("it's working");
+      alert("Please provide search");
       return;
     } else {
       fetch(
-        `https://www.googleapis.com/customsearch/v1?key=AIzaSyBvXOg5FDKSnzdo-Q3AdInFGnmhXyNdt7A&cx=004783607014133881989:7owxsdjwhdk&q=inurl:/collections/+intext:"${
+        `https://www.googleapis.com/customsearch/v1?key=AIzaSyBvXOg5FDKSnzdo-Q3AdInFGnmhXyNdt7A&cx=004783607014133881989:7owxsdjwhdk&q=${
           this.state.searchTerm
-        }"`
+        }`
       )
         .then(res => res.json())
         .then(data => {
@@ -51,10 +51,8 @@ class App extends Component {
           getResults={this.getResults}
           value={searchTerm}
         />
-        <h1>Testing for title</h1>
-        <section className="card_wrapper" style={{ marginTop: "200px" }}>
-          {cards}
-        </section>
+        <h1>Search Product</h1>
+        <section className="card_wrapper">{cards}</section>
       </div>
     );
   }
