@@ -20,9 +20,9 @@ class App extends Component {
       return;
     } else {
       fetch(
-        `https://www.googleapis.com/customsearch/v1?key=AIzaSyBvXOg5FDKSnzdo-Q3AdInFGnmhXyNdt7A&cx=004783607014133881989:7owxsdjwhdk&q=${
+        `https://www.googleapis.com/customsearch/v1?key=AIzaSyBvXOg5FDKSnzdo-Q3AdInFGnmhXyNdt7A&cx=004783607014133881989:7owxsdjwhdk&q=inurl:/collections/+intext:"${
           this.state.searchTerm
-        }`
+        }"`
       )
         .then(res => res.json())
         .then(data => {
