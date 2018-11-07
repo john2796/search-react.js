@@ -11,10 +11,12 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = {
   card: {
-    maxWidth: 345
+    maxWidth: 345,
+    margin: "2rem 0"
   },
   media: {
-    height: 140
+    height: 140,
+    objectFit: "cover"
   }
 };
 
@@ -23,11 +25,10 @@ const Cards = props => {
   console.log(item);
   return (
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea href={item.link} target="_blank">
         <CardMedia
           className={classes.media}
           image={item.pagemap["cse_image"][0].src}
-          style={{ objectFit: "cover" }}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

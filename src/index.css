@@ -25,3 +25,9 @@ code {
   flex-flow: row wrap;
   border: 1px solid red;
 }
+
+h1 {
+  font-family: "Abril Fatface", cursive;
+  font-size: 60px;
+  color: rgb(106, 51, 51);
+}

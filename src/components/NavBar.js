@@ -9,6 +9,8 @@ import { fade } from "@material-ui/core/styles/colorManipulator";
 import { withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
+import Icon from "@material-ui/core/Icon";
+import { Tooltip } from "@material-ui/core";
 
 const styles = theme => ({
   root: {
@@ -71,6 +73,12 @@ const styles = theme => ({
   AppBar: {
     background:
       "linear-gradient(to right, #BE5869, #403A3E)" /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  },
+  Robot: {
+    fontSize: 50
+  },
+  button: {
+    marginRight: 20
   }
 });
 
@@ -85,7 +93,7 @@ function NavBar(props) {
             color="inherit"
             aria-label="Open drawer"
           />
-          <span role="img" aria-label="robot">
+          <span role="img" aria-label="robot" className={classes.Robot}>
             🤖
           </span>
           <Typography
@@ -94,7 +102,7 @@ function NavBar(props) {
             color="inherit"
             noWrap
           >
-            Material-UI
+            FSw16
           </Typography>
           <div className={classes.grow} />
           <div className={classes.search}>
@@ -113,14 +121,17 @@ function NavBar(props) {
             />
             {/* </form> */}
           </div>
-          <Button
-            variant="contained"
-            href="#contained-buttons"
-            className={classes.button}
-            onClick={props.getResults}
-          >
-            Submit
-          </Button>
+          <Tooltip title="Submit">
+            <Button
+              variant="fab"
+              color="secondary"
+              aria-label="Edit"
+              className={classes.button}
+              onClick={props.getResults}
+            >
+              <Icon>ǂ</Icon>
+            </Button>
+          </Tooltip>
         </Toolbar>
       </AppBar>
     </div>

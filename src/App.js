@@ -16,7 +16,7 @@ class App extends Component {
     e.preventDefault();
 
     if (!searchTerm) {
-      console.log("it's working");
+      alert("Please provide search");
       return;
     } else {
       fetch(
@@ -51,10 +51,8 @@ class App extends Component {
           getResults={this.getResults}
           value={searchTerm}
         />
-        <h1>Testing for title</h1>
-        <section className="card_wrapper" style={{ marginTop: "200px" }}>
-          {cards}
-        </section>
+        <h1>Search Product</h1>
+        <section className="card_wrapper">{cards}</section>
       </div>
     );
   }
